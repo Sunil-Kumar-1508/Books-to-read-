@@ -1,35 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-   <meta charset="UTF-8">
-   <title>Books I’ve read</title>
-   <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Recommendations</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-   <!-- Navigation menu -->
-   <nav>
-      <a href="/">Courses</a>
-      <a href="/newsletter">Newsletter</a>
-      <a href="/blog">Blog</a>
-      <a href="/quotes">Quotes</a>
-      <a href="/books">Books I’ve read</a>
-      <a href="/videos">Videos</a>
-   </nav>
 
-   <!-- Main Content -->
-   <main>
-      <h1>Books I have read</h1>
-      <p>
-         Collection of books I have read and shared in my weekly newsletter.
-         All these books are affiliate links. Which means if you purchase
-         from these links, I get a small % of affiliate revenue, 100% of
-         which goes towards sponsoring education for kids.
-      </p>
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <div class="logo">My Book Shelf</div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Categories</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
 
-      <!-- Book list will go here -->
-      <ul id="book-list"></ul>
-   </main>
+    <!-- HEADER SECTION -->
+    <header class="header">
+        <h1>Books I Recommend</h1>
+        <p>A curated list of books I’ve read and found valuable. All links are affiliate links — earnings are donated to support children's education.</p>
+    </header>
 
-   <script src="books.js"></script>
+    <!-- BOOK GRID -->
+    <section class="book-container" id="book-list">
+        <!-- Books will load here from JavaScript -->
+    </section>
+
+    <script src="books.js"></script>
+
 </body>
 </html>
