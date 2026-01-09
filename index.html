@@ -3,33 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Recommendations</title>
+    <title>My Book Recommendations</title>
+
+    <!-- SEO Meta -->
+    <meta name="description" content="A curated collection of powerful books that shaped my growth. Explore recommended reads with images and summaries.">
+    <meta name="keywords" content="books, recommendations, reading list, best books, book collection, learning books, growth books,books">
+    <meta name="author" content="Sunil Kumar">
+
+    <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
 </head>
+
+<script>
+  
+    // Smooth scrolling
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
+
+    // Active highlight on scroll
+    const sections = document.querySelectorAll('section, main, footer');
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    window.addEventListener('scroll', () => {
+        let current = "";
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            if (pageYOffset >= sectionTop) {
+                current = section.getAttribute("id");
+            }
+        });
+
+        navLinks.forEach(a => {
+            a.classList.remove("active");
+            if (a.getAttribute('href').includes(current)) {
+                a.classList.add("active");
+            }
+        });
+    });
+</script>
+
+
+
 <body>
 
-    <!-- NAVIGATION -->
-    <nav class="navbar">
-        <div class="logo">My Book Shelf</div>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Categories</a></li>
-            <li><a href="#">About</a></li>
-        </ul>
-    </nav>
-
-    <!-- HEADER SECTION -->
-    <header class="header">
-        <h1>Books I Recommend</h1>
-        <p>A curated list of books I’ve read and found valuable. All links are affiliate links — earnings are donated to support children's education.</p>
+    <!-- NAVIGATION BAR -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">My Book Recommendations</div>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#book-list">Books</a></li>
+                <li><a href="#about">About</a></li>
+               
+            </ul>
+        </nav>
     </header>
 
-    <!-- BOOK GRID -->
-    <section class="book-container" id="book-list">
-        <!-- Books will load here from JavaScript -->
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1>Books That Inspire Growth</h1>
+            <p>Curated books that challenge your thinking, expand your learning, and transform your personal journey.</p>
+        </div>
     </section>
+    
+    <!-- BOOK GRID -->
+    <main id="book-list" class="book-container">
+        <!-- Books load from JavaScript -->
+    </main>
 
+
+    <!-- Script -->
     <script src="books.js"></script>
+    
+     <!-- ABOUT SECTION -->
+    <section id="about" class="about">
+        <div class="about-content">
+            <h2>About This Website</h2>
+            <p>
+                 Welcome to my personal reading corner. A space thoughtfully created for curious minds, growth seekers, and anyone who believes in the transformative power of books. Every title you find here has been personally read, experienced, and treasured by me. These aren’t just books. They are mentors, companions, and sources of wisdom that have shaped my mindset, strengthened my perspective, and supported my journey of becoming better each day.
 
+I built this platform with a simple intention. To make it easier for others to discover books that genuinely matter. In a world filled with endless recommendations, this space offers something real and insights drawn from personal experience. Whether you're looking for motivation, clarity, self-development, or new ideas, each featured book has been selected because it left a meaningful impact on my life, and I believe it can do the same for you.
+
+As you explore, you’ll also find purchase links. These are affiliate links, which means I earn a small commission if you choose to buy through them. At no extra cost to you. This support helps me continue reading, learning, and curating more valuable content for you.
+
+Dive in, discover freely, and let these books inspire your next step forward.
+
+
+            </p>
+        </div>
+    </section>
+    
+
+        <p class="copyright">© 2026 My Book recommendations — All Rights Reserved.</p>
+    </footer>
+
+    
 </body>
 </html>
